@@ -1,0 +1,15 @@
+android-studio
+code
+
+godot
+
+clang
+cmake
+ninja
+
+openssh
+
+qemu-base
+virt-manager
+virt-viewer
+vde2

@@ -1,0 +1,9 @@
+bibata-cursor-theme
+
+brave-bin
+
+spotify
+
+qdiskinfo-bin
+
+zscroll-git

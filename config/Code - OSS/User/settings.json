@@ -1,0 +1,61 @@
+// ~/.config/Code/User/settings.json
+
+{
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.sideBar.location": "right",
+
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "fluent-icons",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.formatOnSave": true,
+  "editor.guides.indentation": false,
+  "indenticator.width": 0.1,
+  "indenticator.color.dark": "rgba(255,255,255,0.1)",
+
+  "[python]": {
+    "editor.formatOnType": true,
+  },
+
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+  },
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+}
+
+//===== EXTENSIONES =====
+
+// Dart
+// Flutter
+// Python
+// Django
+// Prettier
+
+// Error Lens
+// Auto Rename Tag
+// Better Comments
+// Code Runner
+// CodeSnap
+// GitHub Copilot
+// GitLens
+// Image preview
+// Live Server
+// Live Share
+// Markdown All in One
+// Path Intellisense
+// Peacock
+// Thunder Client
+
+// One Dark Pro
+// Fluent Icons
+// Material Icon Theme
+// Indent Rainbow
+// Indenticator
