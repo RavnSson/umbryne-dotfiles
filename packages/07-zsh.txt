@@ -1,0 +1,17 @@
+# SHELL
+zsh
+
+# PROMPT
+starship
+
+# NAVIGATION
+zoxide
+
+# SEARCH
+fzf
+fd
+ripgrep
+
+# CLI UTILITIES
+eza
+bat

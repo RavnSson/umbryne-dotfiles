@@ -1,0 +1,17 @@
+# BASE SYSTEM
+base
+linux
+linux-firmware
+
+# CPU MICROCODE
+amd-ucode
+
+# BUILD TOOLS
+base-devel
+
+# NETWORK
+networkmanager
+
+# BASIC UTILITIES
+nvim
+git

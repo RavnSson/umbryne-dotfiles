@@ -1,0 +1,50 @@
+# FONTS
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ttf-jetbrains-mono-nerd
+
+# AUDIO
+pipewire
+wireplumber
+pipewire-pulse
+pipewire-alsa
+pipewire-jack
+pavucontrol
+
+# WAYLAND
+xdg-desktop-portal-hyprland
+hyprpolkitagent
+
+# QT
+qt5-wayland
+qt6-wayland
+qt6ct
+
+# DESKTOP
+waybar
+rofi
+mako
+
+# FILE MANAGER
+nemo
+ranger
+
+# MULTIMEDIA
+imv
+mpv
+playerctl
+
+# LOOK
+nwg-look
+gnome-themes-extra
+
+# UTILITIES
+brightnessctl
+btop
+htop
+python-setuptools
+
+# EXPLORER
+chromium
+

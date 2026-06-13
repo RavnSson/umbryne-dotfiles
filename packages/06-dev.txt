@@ -1,14 +1,16 @@
+# IDEs
 android-studio
 code
 
+# GAME DEVELOPMENT
 godot
 
+# TOOLCHAIN C/C++
 clang
 cmake
 ninja
 
-openssh
-
+# VIRTUALIZATION
 qemu-base
 virt-manager
 virt-viewer

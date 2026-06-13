@@ -1,0 +1,13 @@
+# COMPOSITOR
+hyprland
+
+# TERMINAL
+kitty
+
+# DISPLAY MANAGER
+ly
+
+# BLUETOOTH
+bluez
+bluez-utils
+bluez-deprecated-tools

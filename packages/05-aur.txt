@@ -1,0 +1,14 @@
+# CURSOR
+bibata-cursor-theme
+
+# EXPLORER
+brave-bin
+
+# MUSIC
+spotify
+
+# WAYBAR
+zscroll-git
+
+# HARDWARE
+qdiskinfo-bin

@@ -1,0 +1,7 @@
+https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+
+https://github.com/zsh-users/zsh-autosuggestions.git
+
+https://github.com/zsh-users/zsh-history-substring-search.git
+
+https://github.com/jeffreytse/zsh-vi-mode.git

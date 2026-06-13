@@ -1,0 +1,23 @@
+# BOOTLOADER
+grub
+efibootmgr
+
+# DRIVERS NVIDIA
+nvidia-open
+nvidia-utils
+nvidia-settings
+
+# DOCUMENTATION
+man-db
+man-pages
+
+#SSH
+openssh
+
+#MIRRORS
+reflector
+
+# UTILITIES
+unzip
+wget
+curl
