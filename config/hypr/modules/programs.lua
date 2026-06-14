@@ -3,7 +3,7 @@
 ---------------------
 
 -- Set programs that you use
-terminal    = "ghostty"
+terminal    = "kitty"
 fileManager = "nemo"
 browser = "brave"
 music = "spotify"
