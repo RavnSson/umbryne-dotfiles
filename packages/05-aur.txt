@@ -12,3 +12,6 @@ zscroll-git
 
 # HARDWARE
 qdiskinfo-bin
+
+# IDEs
+android-studio

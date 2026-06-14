@@ -1,5 +1,4 @@
 # IDEs
-android-studio
 code
 
 # GAME DEVELOPMENT
