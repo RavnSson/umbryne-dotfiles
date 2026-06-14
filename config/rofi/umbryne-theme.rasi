@@ -1,0 +1,122 @@
+/* ========================= */
+/*      UMBRYNE ROFI         */
+/* ========================= */
+
+* {
+    font: "JetBrainsMono Nerd Font 12";
+
+    /* Umbryne Dark */
+    bg0: #0A0B0CEE;      /* Obsidiana */
+    bg1: #1C1E22;        /* Grafito digital */
+    bg2: #262A30;        /* Basalto técnico */
+
+    fg0: #C5C8C6;        /* Ceniza espectral */
+    fg1: #9A9E9C;        /* Ceniza tenue */
+    fg2: #6E7270;        /* Ceniza apagada */
+
+    accent: #3AFF8A;    /* Verde terminal */
+    brand: #5E2B97;     /* Violeta abismal */
+
+    background-color: transparent;
+    text-color: @fg0;
+
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    location: center;
+    width: 760;
+
+    background-color: @bg0;
+
+    border: 2px;
+    border-color: @accent;
+
+    border-radius: 0;
+}
+
+inputbar {
+    padding: 16px;
+    spacing: 16px;
+
+    background-color: transparent;
+
+    children: [ icon-search, entry ];
+}
+
+icon-search {
+    expand: false;
+    filename: "search";
+    size: 22px;
+
+    text-color: @accent;
+}
+
+entry {
+    placeholder: "Umbryne Command Center";
+    placeholder-color: @fg2;
+}
+
+icon-search,
+entry,
+element-icon,
+element-text {
+    vertical-align: 0.5;
+}
+
+message {
+    border: 1px 0 0;
+    border-color: @bg2;
+
+    background-color: @bg1;
+}
+
+textbox {
+    padding: 8px 20px;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+
+    fixed-height: false;
+
+    border: 1px 0 0;
+    border-color: @bg2;
+
+    padding: 6px;
+    spacing: 2px;
+}
+
+element {
+    padding: 10px 16px;
+    spacing: 14px;
+
+    background-color: transparent;
+}
+
+element normal normal,
+element alternate normal {
+    text-color: @fg0;
+}
+
+element normal active,
+element alternate active {
+    text-color: @brand;
+}
+
+element selected normal,
+element selected active {
+    background-color: @accent;
+    text-color: #0A0B0C;
+}
+
+element-icon {
+    size: 1em;
+}
+
+element-text {
+    text-color: inherit;
+}
