@@ -6,7 +6,7 @@ install_package_list() {
 local file="$1"
 
 mapfile -t packages < <(
-	grep -v '^#' "#$file" |
+	grep -v '^#' "$file" |
 	grep -v '^$'
 )
 
