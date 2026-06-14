@@ -11,8 +11,8 @@ cp -rf config/zsh "$HOME/.config"
 
 mkdir -p "$HOME/.config/Code - OSS/User"
 
-cp -f
-"config/Code - OSS/User/settings.json"
-"$HOME/.config/Code - OSS/User/settings.json"
+cp -f \
+    "config/Code - OSS/User/settings.json" \
+    "$HOME/.config/Code - OSS/User/settings.json"
 
 echo "Dotfiles installed successfully."
