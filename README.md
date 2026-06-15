@@ -1,8 +1,13 @@
+
 # Umbryne Dotfiles
 
 Personal Arch Linux configuration and bootstrap system for rebuilding my workstation from a clean installation.
 
-This repository contains:
+The operating system is temporary.
+
+The configuration lives in Git.
+
+This repository contains everything required to reproduce my daily workstation environment, including:
 
 * Hyprland configuration
 * Waybar configuration
@@ -11,24 +16,58 @@ This repository contains:
 * VS Code settings
 * Package manifests
 * Bootstrap scripts
-
-The goal is to keep the entire workstation reproducible from Git.
+* System-level configuration
 
 ---
 
-## Installation
+# Philosophy
 
-### 1. Install Arch Linux
+A fresh Arch installation should only require:
 
-During the `pacstrap` phase, install the packages listed in:
+```text
+Install Arch
+→ Clone repository
+→ Run bootstrap
+→ Reboot
+```
+
+to restore the complete environment.
+
+The goal is not to back up a machine.
+
+The goal is to describe a machine.
+
+---
+
+# Prerequisites
+
+The bootstrap assumes the following:
+
+* Arch Linux is already installed
+* A user account exists
+* The user has sudo privileges
+* NetworkManager is working
+* Internet connectivity is available
+* Git is installed
+* SSH access to GitHub is configured (optional but recommended)
+
+---
+
+# Installation
+
+## 1. Install Arch Linux
+
+During the `pacstrap` phase install all packages listed in:
 
 ```text
 packages/01-pacstrap.txt
 ```
 
-### 2. Configure the base system
+---
 
-Inside `arch-chroot`, install the packages listed in:
+## 2. Configure the Base System
+
+Inside `arch-chroot`, install all packages listed in:
 
 ```text
 packages/02-chroot.txt
@@ -42,11 +81,15 @@ Also configure:
 * User account
 * GRUB
 
-### 3. Reboot
+---
+
+## 3. Reboot
 
 Boot into the newly installed system and log in through a TTY.
 
-### 4. Clone the repository
+---
+
+## 4. Clone the Repository
 
 ```bash
 cd ~
@@ -54,10 +97,15 @@ cd ~
 git clone git@github.com:RavnSson/umbryne-dotfiles.git
 ```
 
-### 5. Run the bootstrap
+---
+
+## 5. Run Bootstrap
 
 ```bash
 cd ~/umbryne-dotfiles
+
+chmod +x bootstrap.sh
+chmod +x bootstrap/*.sh
 
 ./bootstrap.sh
 ```
@@ -71,19 +119,27 @@ The bootstrap process will:
 * Install ZSH packages
 * Install ZSH plugins
 * Apply dotfiles
+* Apply system configuration
 * Run post-install tasks
-
-### 6. Reboot
-
-After rebooting, the system should be ready to use.
 
 ---
 
-## Repository Structure
+## 6. Reboot
+
+```bash
+reboot
+```
+
+After rebooting, the workstation should be fully operational.
+
+---
+
+# Repository Structure
 
 ```text
 umbryne-dotfiles/
 
+README.md
 bootstrap.sh
 
 bootstrap/
@@ -97,6 +153,8 @@ config/
 ├── Code - OSS/
 ├── hypr/
 ├── rofi/
+├── system/
+│   └── zshenv
 ├── waybar/
 └── zsh/
 
@@ -109,60 +167,277 @@ packages/
 ├── 06-dev.txt
 ├── 07-zsh.txt
 └── 08-zsh-plugins.txt
+
+docs/
 ```
 
 ---
 
-## Package Layers
+# Package Layers
 
-### 01 - Pacstrap
+## 01 - Pacstrap
 
 Minimal Arch Linux installation.
 
-### 02 - Chroot
+Contains:
 
-Bootloader, drivers and system tools.
-
-### 03 - Desktop
-
-Hyprland, Kitty, Ly and Bluetooth.
-
-### 04 - Pacman
-
-Fonts, audio, desktop utilities and applications.
-
-### 05 - AUR
-
-Third-party packages installed through yay.
-
-### 06 - Development
-
-Development tools, IDEs and virtualization.
-
-### 07 - ZSH
-
-Shell packages and CLI utilities.
-
-### 08 - ZSH Plugins
-
-External plugins installed from Git repositories.
+* Base system
+* Kernel
+* Firmware
+* CPU microcode
+* NetworkManager
+* Base development tools
 
 ---
 
-## Philosophy
+## 02 - Chroot
 
-The operating system is temporary.
+System-level packages.
 
-The configuration lives in Git.
+Contains:
 
-A fresh Arch installation should only require:
+* GRUB
+* EFI tools
+* NVIDIA drivers
+* SSH
+* Manual pages
+* Reflector
+
+---
+
+## 03 - Desktop
+
+Graphical environment foundation.
+
+Contains:
+
+* Hyprland
+* Kitty
+* Ly
+* Bluetooth
+
+---
+
+## 04 - Pacman
+
+Desktop applications and utilities.
+
+Contains:
+
+* Fonts
+* PipeWire
+* Waybar
+* Rofi
+* Nemo
+* Ranger
+* Media tools
+* Appearance tools
+* Utility programs
+
+---
+
+## 05 - AUR
+
+Third-party packages installed through yay.
+
+Contains:
+
+* Brave
+* Spotify
+* Bibata Cursor Theme
+* Android Studio
+* Additional AUR utilities
+
+---
+
+## 06 - Development
+
+Development environment.
+
+Contains:
+
+* VS Code
+* Godot
+* Clang
+* CMake
+* Ninja
+* Virtualization tools
+
+---
+
+## 07 - ZSH
+
+Shell environment.
+
+Contains:
+
+* ZSH
+* Starship
+* Zoxide
+* FZF
+* Eza
+* Bat
+* Ripgrep
+* FD
+
+---
+
+## 08 - ZSH Plugins
+
+External plugins installed directly from Git repositories.
+
+Examples:
+
+* fast-syntax-highlighting
+* zsh-autosuggestions
+* zsh-history-substring-search
+* zsh-vi-mode
+
+---
+
+# ZSH Configuration
+
+ZSH follows the XDG Base Directory specification.
+
+Configuration is stored in:
 
 ```text
-Install Arch
-→ Clone repository
-→ Run bootstrap
-→ Reboot
+~/.config/zsh
 ```
 
-to restore the complete environment.
+The bootstrap installs:
+
+```text
+/etc/zsh/zshenv
+```
+
+which redirects ZSH to the XDG configuration directory.
+
+---
+
+# Post-Install Tasks
+
+The bootstrap automatically:
+
+* Updates the font cache
+* Generates XDG user directories
+* Enables Bluetooth
+* Enables Ly
+
+Depending on the machine, additional manual verification may be required.
+
+---
+
+# Manual Verification
+
+After the first reboot verify:
+
+```bash
+echo $SHELL
+```
+
+Expected:
+
+```text
+/usr/bin/zsh
+```
+
+Verify services:
+
+```bash
+systemctl status bluetooth
+systemctl status ly@tty2
+```
+
+Verify configuration:
+
+```bash
+ls ~/.config
+```
+
+Expected directories:
+
+```text
+hypr
+waybar
+rofi
+zsh
+```
+
+---
+
+# Troubleshooting
+
+## Ly does not start
+
+Check:
+
+```bash
+systemctl status ly@tty2
+```
+
+Enable if necessary:
+
+```bash
+sudo systemctl enable ly@tty2.service
+```
+
+---
+
+## User directories are missing
+
+Install:
+
+```bash
+sudo pacman -S xdg-user-dirs
+```
+
+Then run:
+
+```bash
+xdg-user-dirs-update
+```
+
+---
+
+## ZSH configuration is ignored
+
+Verify:
+
+```bash
+echo $ZDOTDIR
+```
+
+Expected:
+
+```text
+~/.config/zsh
+```
+
+Verify:
+
+```bash
+cat /etc/zsh/zshenv
+```
+
+---
+
+# Future Improvements
+
+Potential future additions:
+
+* Automatic virtualization setup
+* Monitor profile management
+* Wallpaper management
+* GNU Stow support
+* Backup and restore utilities
+* Multiple machine profiles
+
+---
+
+# License
+
+Personal use repository.
+
+Adapt freely to your own workflow.
 
