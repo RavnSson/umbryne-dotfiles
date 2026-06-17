@@ -8,9 +8,13 @@ godot
 clang
 cmake
 ninja
+mesa-utils
+gnome-keyring
 
 # VIRTUALIZATION
 qemu-base
 virt-manager
 virt-viewer
 vde2
+
+jdk-openjdk

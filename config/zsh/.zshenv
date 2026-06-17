@@ -28,6 +28,15 @@ export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 # ---------- PATH ----------
 # Personal binaries/scripts
 export PATH="$HOME/.local/bin:$PATH"
+
+# PATHS for Android SDK
 export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
+export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+
 export PATH="$HOME/development/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="user/sbin/chromium"
+
