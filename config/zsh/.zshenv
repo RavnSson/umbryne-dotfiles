@@ -38,5 +38,5 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
 
 export PATH="$HOME/development/flutter/bin:$PATH"
-export CHROME_EXECUTABLE="user/sbin/chromium"
+export CHROME_EXECUTABLE="/usr/bin/chromium"
 

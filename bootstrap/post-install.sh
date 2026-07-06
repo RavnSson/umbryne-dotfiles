@@ -13,8 +13,8 @@ sudo systemctl enable bluetooth.service
 sudo systemctl enable ly@tty2
 
 echo "Setting ZSH as default shell..."
-chsh -s"$(which zsh)"
+chsh -s "$(command -v zsh)"
 
 echo
 echo "Post-install tasks completed."
-echo "A reboot is recomended."
+echo "A reboot is recommended."

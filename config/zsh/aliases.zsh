@@ -20,9 +20,6 @@ compdef eza=ls
 # Better cat
 alias cat='bat'
 
-# fd
-alias fd='fdfind'
-
 # =========================================================
 # Core utilities
 # =========================================================
@@ -30,6 +27,7 @@ alias fd='fdfind'
 alias grep='rg --color=auto'
 alias diff='diff --color=auto'
 alias df='df -h'
+alias poweroff='shutdown now'
 
 # =========================================================
 # Navigation
