@@ -26,7 +26,7 @@ echo "Linking user configuration..."
 
 mkdir -p "$HOME/.config"
 
-for dir in hypr waybar rofi zsh kitty mako; do
+for dir in hypr waybar rofi zsh kitty mako nvim; do
     link "$REPO_DIR/config/$dir" "$HOME/.config/$dir"
 done
 

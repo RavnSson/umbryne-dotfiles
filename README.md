@@ -13,6 +13,7 @@ This repository contains everything required to reproduce my daily workstation e
 * Waybar configuration
 * Rofi configuration
 * ZSH configuration
+* Neovim configuration
 * VS Code settings
 * Package manifests
 * Bootstrap scripts
@@ -155,6 +156,7 @@ config/
 ├── hypr/
 ├── kitty/
 ├── mako/
+├── nvim/
 ├── rofi/
 ├── system/
 │   └── zshenv
@@ -185,6 +187,7 @@ User configuration is **symlinked**, not copied:
 ~/.config/zsh     → repo/config/zsh
 ~/.config/kitty   → repo/config/kitty
 ~/.config/mako    → repo/config/mako
+~/.config/nvim    → repo/config/nvim
 ```
 
 Editing a file in this repository immediately updates the live
