@@ -117,9 +117,9 @@ The bootstrap process will:
 * Install AUR packages
 * Install development tools
 * Install ZSH packages
-* Install ZSH plugins
-* Apply dotfiles
+* Apply dotfiles (symlinked)
 * Apply system configuration
+* Install ZSH plugins
 * Run post-install tasks
 
 ---
@@ -151,7 +151,10 @@ bootstrap/
 
 config/
 ├── Code - OSS/
+├── environment.d/
 ├── hypr/
+├── kitty/
+├── mako/
 ├── rofi/
 ├── system/
 │   └── zshenv
@@ -167,9 +170,32 @@ packages/
 ├── 06-dev.txt
 ├── 07-zsh.txt
 └── 08-zsh-plugins.txt
-
-docs/
 ```
+
+---
+
+# Synchronization Model
+
+User configuration is **symlinked**, not copied:
+
+```text
+~/.config/hypr    → repo/config/hypr
+~/.config/waybar  → repo/config/waybar
+~/.config/rofi    → repo/config/rofi
+~/.config/zsh     → repo/config/zsh
+~/.config/kitty   → repo/config/kitty
+~/.config/mako    → repo/config/mako
+```
+
+Editing a file in this repository immediately updates the live
+environment, and any change made through the live configuration is
+already inside the repository, ready to be committed.
+
+The only copied file is `/etc/zsh/zshenv` (system-level, owned by root).
+
+When `install-dotfiles.sh` finds a real directory where a symlink
+should go, it moves it to `~/.config/umbryne-backup-<timestamp>/`
+before linking.
 
 ---
 

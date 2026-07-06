@@ -2,27 +2,45 @@
 
 set -e
 
+# Dotfiles are symlinked, not copied: editing the repository
+# immediately updates the live configuration.
+
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+BACKUP_DIR="$HOME/.config/umbryne-backup-$(date +%Y%m%d-%H%M%S)"
+
+link() {
+    local src="$1"
+    local dst="$2"
+
+    if [[ -e "$dst" && ! -L "$dst" ]]; then
+        mkdir -p "$BACKUP_DIR"
+        mv "$dst" "$BACKUP_DIR/"
+        echo "Backed up $dst"
+    fi
+
+    ln -sfn "$src" "$dst"
+    echo "Linked $dst -> $src"
+}
+
+echo "Linking user configuration..."
+
 mkdir -p "$HOME/.config"
 
-cp -rf config/hypr "$HOME/.config"
-cp -rf config/waybar "$HOME/.config"
-cp -rf config/rofi "$HOME/.config"
-cp -rf config/zsh "$HOME/.config"
+for dir in hypr waybar rofi zsh kitty mako; do
+    link "$REPO_DIR/config/$dir" "$HOME/.config/$dir"
+done
 
-echo "Installing environment configuration..."
+echo "Linking environment configuration..."
 
 mkdir -p "$HOME/.config/environment.d"
+link "$REPO_DIR/config/environment.d/android.conf" \
+     "$HOME/.config/environment.d/android.conf"
 
-sed "s|**HOME**|$HOME|g" 
-config/environment.d/android.conf 
-> "$HOME/.config/environment.d/android.conf"
-
+echo "Linking VS Code settings..."
 
 mkdir -p "$HOME/.config/Code - OSS/User"
-
-cp -f \
-    "config/Code - OSS/User/settings.json" \
-    "$HOME/.config/Code - OSS/User/settings.json"
+link "$REPO_DIR/config/Code - OSS/User/settings.json" \
+     "$HOME/.config/Code - OSS/User/settings.json"
 
 echo "Installing system ZSH configuration..."
 
@@ -33,7 +51,12 @@ fi
 sudo mkdir -p /etc/zsh
 
 sudo cp -f \
-    config/system/zshenv \
+    "$REPO_DIR/config/system/zshenv" \
     /etc/zsh/zshenv
 
-echo "Dotfiles installed successfully."
+if [[ -d "$BACKUP_DIR" ]]; then
+    echo
+    echo "Previous configurations moved to: $BACKUP_DIR"
+fi
+
+echo "Dotfiles linked successfully."

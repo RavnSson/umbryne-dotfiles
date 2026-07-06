@@ -1,6 +1,9 @@
 # COMPOSITOR
 hyprland
 
+# WALLPAPER
+hyprpaper
+
 # TERMINAL
 kitty
 
