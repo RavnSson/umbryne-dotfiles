@@ -15,3 +15,6 @@ qdiskinfo-bin
 
 # IDEs
 android-studio
+
+# Bluetooth app
+bluetui

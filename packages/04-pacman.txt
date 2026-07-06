@@ -5,12 +5,14 @@ noto-fonts-emoji
 ttf-jetbrains-mono-nerd
 
 # AUDIO
+alsa-utils
 pipewire
 wireplumber
 pipewire-pulse
 pipewire-alsa
 pipewire-jack
 pavucontrol
+rtkit
 
 # WAYLAND
 xdg-desktop-portal-hyprland
