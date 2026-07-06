@@ -4,9 +4,20 @@ add_newline = false
 
 format = "$directory$os$git_branch$git_status$nodejs$rust$golang$php $character"
 
+# Umbryne palette: re-skins the named colors used below.
+# Canonical home: config/rofi/umbryne-theme.rasi
+palette = "umbryne"
+
+[palettes.umbryne]
+green  = "#3AFF8A" # Verde terminal
+cyan   = "#3AFF8A" # Verde terminal (no cyan in the palette)
+purple = "#5E2B97" # Violeta abismal
+blue   = "#5E2B97" # Violeta abismal
+white  = "#C5C8C6" # Ceniza espectral
+
 [os]
 disabled = false
-format = "[$symbol](#blue) "
+format = "[$symbol](blue) "
 
 [os.symbols]
 Ubuntu  = "󰕈"

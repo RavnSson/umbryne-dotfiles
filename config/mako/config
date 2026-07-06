@@ -1,0 +1,28 @@
+# ========================= #
+#      UMBRYNE MAKO         #
+# ========================= #
+# Palette canonical home: config/rofi/umbryne-theme.rasi
+
+font=JetBrainsMono Nerd Font 11
+
+background-color=#0A0B0CEE
+text-color=#C5C8C6
+border-color=#3AFF8A
+progress-color=over #3AFF8A
+
+border-size=2
+border-radius=0
+padding=12
+margin=12
+width=380
+
+default-timeout=6000
+max-visible=5
+
+[urgency=low]
+border-color=#262A30
+text-color=#9A9E9C
+
+[urgency=critical]
+border-color=#E35149
+default-timeout=0

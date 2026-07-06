@@ -1,9 +1,16 @@
-@define-color highlight rgba(117, 241, 250, 1);
-@define-color dark-9 rgba(24, 24, 27, 1);
-@define-color dark-8 rgba(39, 39, 42, 1);
-@define-color dark-7 rgba(63, 63, 70, 1);
-@define-color dark-6 rgba(82, 82, 91, 1);
-@define-color dark-5 rgba(113, 113, 122, 1);
+/* ========================= */
+/*     UMBRYNE WAYBAR        */
+/* ========================= */
+/* Palette canonical home: config/rofi/umbryne-theme.rasi */
+
+@define-color bg0 rgba(10, 11, 12, 1); /* Obsidiana */
+@define-color bg1 rgba(28, 30, 34, 1); /* Grafito digital */
+@define-color bg2 rgba(38, 42, 48, 1); /* Basalto técnico */
+@define-color fg0 rgba(197, 200, 198, 1); /* Ceniza espectral */
+@define-color fg2 rgba(110, 114, 112, 1); /* Ceniza apagada */
+@define-color accent rgba(58, 255, 138, 1); /* Verde terminal */
+@define-color brand rgba(94, 43, 151, 1); /* Violeta abismal */
+@define-color urgent rgba(227, 81, 73, 1);
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
@@ -12,8 +19,8 @@
 }
 
 window#waybar {
-  background-color: @dark-9;
-  color: white;
+  background-color: @bg0;
+  color: @fg0;
 }
 
 #workspaces button {
@@ -21,12 +28,12 @@ window#waybar {
   margin: 7px 0px 7px 7px;
   background: transparent;
   border-radius: 2px;
-  color: white;
+  color: @fg0;
 }
 
 #workspaces button.active {
-  background: @highlight;
-  color: black;
+  background: @accent;
+  color: @bg0;
   font-weight: 700;
 }
 
@@ -39,14 +46,14 @@ window#waybar {
 #volume {
   border-radius: 8px;
   padding: 5px 8px;
-  background: @dark-8;
+  background: @bg1;
   margin: 5px 10px 5px 0px;
 }
 
 #submap,
 #workspaces button.urgent {
-  background: rgba(227, 81, 73, 1);
-  color: black;
+  background: @urgent;
+  color: @bg0;
 }
 
 #pulseaudio-slider {
@@ -69,17 +76,17 @@ window#waybar {
   min-height: 8px;
   min-width: 75px;
   border-radius: 5px;
-  background: @dark-7;
+  background: @bg2;
 }
 
 #pulseaudio-slider highlight {
   min-width: 10px;
   border-radius: 5px;
-  background: @highlight;
+  background: @accent;
 }
 
 #media {
-  color: #42ff9f;
+  color: @accent;
   margin: 7px 0px 7px 80px;
 }
 
@@ -93,15 +100,16 @@ window#waybar {
 }
 
 #custom-media-time {
-  color: @dark-5;
+  color: @fg2;
   font-size: 14px;
 }
 
 tooltip {
-  background: @dark-9;
+  background: @bg0;
+  border: 1px solid @bg2;
   border-radius: 5px;
 }
 
 tooltip label {
-  color: white;
+  color: @fg0;
 }

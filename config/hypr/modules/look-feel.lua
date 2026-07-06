@@ -10,9 +10,10 @@ hl.config({
 
         border_size = 3,
 
+        -- Umbryne palette: verde terminal → violeta abismal (canonical home: rofi/umbryne-theme.rasi)
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = {"rgba(3AFF8Aee)", "rgba(5E2B97ee)"}, angle = 45 },
+            inactive_border = "rgba(262A30aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -36,7 +37,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = 0xee0a0b0c, -- Obsidiana
         },
 
         blur = {

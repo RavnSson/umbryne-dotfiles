@@ -52,7 +52,7 @@
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "calendar": {
         "format": {
-          "today": "<span color='#75f1fa'><b>{}</b></span>"
+          "today": "<span color='#3AFF8A'><b>{}</b></span>"
         }
       },
       "on-click": "exec chromium --app=https://calendar.google.com"
