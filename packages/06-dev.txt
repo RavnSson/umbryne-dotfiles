@@ -13,6 +13,9 @@ gnome-keyring
 
 # VIRTUALIZATION
 qemu-base
+libvirt
+dnsmasq
+edk2-ovmf
 virt-manager
 virt-viewer
 vde2

@@ -11,6 +11,10 @@ xdg-user-dirs-update
 echo "Enabling services..."
 sudo systemctl enable bluetooth.service
 sudo systemctl enable ly@tty2
+sudo systemctl enable libvirtd.service
+
+echo "Configuring virtualization group membership..."
+sudo usermod -aG libvirt "$USER"
 
 echo "Setting ZSH as default shell..."
 chsh -s "$(command -v zsh)"
