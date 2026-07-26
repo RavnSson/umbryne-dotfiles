@@ -312,6 +312,7 @@ Contains:
 * Bat
 * Ripgrep
 * FD
+* lf
 
 ---
 
@@ -356,6 +357,8 @@ The bootstrap automatically:
 * Generates XDG user directories
 * Enables Bluetooth
 * Enables Ly
+* Enables libvirtd and adds the user to the `libvirt` group
+* Sets ZSH as the default shell
 
 Depending on the machine, additional manual verification may be required.
 
@@ -380,6 +383,7 @@ Verify services:
 ```bash
 systemctl status bluetooth
 systemctl status ly@tty2
+systemctl status libvirtd
 ```
 
 Verify configuration:
@@ -395,6 +399,11 @@ hypr
 waybar
 rofi
 zsh
+kitty
+mako
+nvim
+gtk-3.0
+gtk-4.0
 ```
 
 ---
@@ -461,7 +470,8 @@ Potential future additions:
 
 * Automatic virtualization setup
 * Monitor profile management
-* Wallpaper management
+* Theme/color-scheme switching (multiple palettes beyond the current Umbryne default)
+* Wallpaper switching/rotation across multiple tracked wallpapers
 * GNU Stow support
 * Backup and restore utilities
 * Multiple machine profiles
