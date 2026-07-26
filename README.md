@@ -153,6 +153,8 @@ bootstrap/
 config/
 ├── Code - OSS/
 ├── environment.d/
+├── gtk-3.0/
+├── gtk-4.0/
 ├── hypr/
 ├── kitty/
 ├── mako/
@@ -188,6 +190,8 @@ User configuration is **symlinked**, not copied:
 ~/.config/kitty   → repo/config/kitty
 ~/.config/mako    → repo/config/mako
 ~/.config/nvim    → repo/config/nvim
+~/.config/gtk-3.0 → repo/config/gtk-3.0
+~/.config/gtk-4.0 → repo/config/gtk-4.0
 ```
 
 Editing a file in this repository immediately updates the live
