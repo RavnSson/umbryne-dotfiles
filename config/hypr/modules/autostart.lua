@@ -7,8 +7,9 @@
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function ()
    hl.exec_cmd("waybar")
+   hl.exec_cmd("bash ~/.config/waybar/auto-reload.sh")
    hl.exec_cmd("hyprpaper")
    hl.exec_cmd("playerctld daemon")
    hl.exec_cmd("systemctl --user start hyprpolkitagent")
