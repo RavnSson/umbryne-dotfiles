@@ -11,7 +11,7 @@ xdg-user-dirs-update
 echo "Enabling services..."
 sudo systemctl enable bluetooth.service
 sudo systemctl enable ly@tty2
-sudo systemctl enable libvirtd.service
+sudo systemctl enable virtqemud.socket virtnetworkd.socket virtstoraged.socket
 
 echo "Configuring virtualization group membership..."
 sudo usermod -aG libvirt "$USER"

@@ -357,7 +357,7 @@ The bootstrap automatically:
 * Generates XDG user directories
 * Enables Bluetooth
 * Enables Ly
-* Enables libvirtd and adds the user to the `libvirt` group
+* Enables the modular libvirt daemons (virtqemud, virtnetworkd, virtstoraged) and adds the user to the `libvirt` group
 * Sets ZSH as the default shell
 
 Depending on the machine, additional manual verification may be required.
@@ -383,7 +383,7 @@ Verify services:
 ```bash
 systemctl status bluetooth
 systemctl status ly@tty2
-systemctl status libvirtd
+systemctl status virtqemud.socket
 ```
 
 Verify configuration:
